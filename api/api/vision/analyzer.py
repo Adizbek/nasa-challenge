@@ -104,12 +104,6 @@ def analyze(x, y, z):
         gray_output = cv2.cvtColor(output, cv2.COLOR_BGR2GRAY)
         (thresh, im_bw) = cv2.threshold(gray_output, 128, 255, cv2.THRESH_BINARY | cv2.THRESH_OTSU)
 
-        # color_img = cv2.cvtColor(im_bw, cv2.COLOR_GRAY2RGB)
-        # show the images
-        # cv2.imshow("images", np.hstack([image, output, color_img]))
-
-        # cv2.imshow("images2", im_bw)
-
         cv2.imwrite(analyzed_file + '/tile.png', im_bw)
 
         perc = treePer(im_bw)
